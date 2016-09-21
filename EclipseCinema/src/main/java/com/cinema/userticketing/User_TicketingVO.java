@@ -1,4 +1,4 @@
-package com.cinema.userticketingVO;
+package com.cinema.userticketing;
 
 import java.util.Date;
 
