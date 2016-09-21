@@ -1,13 +1,13 @@
 package com.cinema.usermembership;
 
-public class UserMembershipVO {
+public class User_MembershipVO {
 
 	private String C_ID = ""; // 고객 아이디
 	private String C_PW = ""; //  고객 비밀번호
 	private String C_PHONE = ""; //  고객 전화번호
 	private String C_BIRTH = ""; //  고객 생일
 	private String C_GENDER = "";  // 고객 성별
-	private int C_MILEAGE = 0; // 고객 마일리지
+	private int C_MILEAGE = 0; // 고객 마일리지  
 	public String getC_ID() {
 		return C_ID;
 	}
