@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0 // EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cinema.usermembership.User_MemberMapper">
+<insert id ="create">
+insert into CUSTOMER C_ID, C_NAME, C_PW, C_PHONE, C_BIRTH, C_GENDER, C_MILEAGE) values(CUSTOMER_SEQ.nextval, #{C_ID},#{C_PW},#{C_PHONE},#{C_BIRTH}, #{C_GENDER},#{C_MILEAGE}  )
+</insert>
+<select resultType="CUSTOMER" id="selectCUSTOMER"> select * from CUSTOMER </select>
+<select resultType="CUSTOMER" id="selectIsMember" parameterType="java.util.Map">
+ select * from CUSTOMER where C_ID=#{C_ID} and C_PW=#{C_PW} </select>
+<select resultType="CUSTOMER" id="selectID" parameterType="String">
+ select * from CUSTOMER where C_ID=#{C_ID} </select> 
+
+<!-- 회원정보불러오기 -->
+<select id = "read" resultType="com.cinema.usermembership.User_MembershipVO">
+select C_ID,C_NAME, C_PW, C_PHONE, C_BIRTH, C_GENDER, C_MILEAGE from CUSTOMER
+</select>
+
+<!-- 비밀번호 재설정 -->
+<update id="updatePW">
+ update CUSTOMER set C_PW=#{C_PW} where C_ID=#{C_ID} and C_PHONE=#{C_PHONE}
+</update>
+
+<!-- 아이디찾기 -->
+<select resultType="String" id="findId" parameterType="java.util.Map">
+ select id from CUSTOMER where C_NAME=#{C_NAME} and C_BIRTH=#{C_BIRTH} </select>
+
+
+</mapper>
